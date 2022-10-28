@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(229, 228, 228);
+    height: 100vh;
+}
+
+.header {
+    background-color: rgb(247, 247, 247);
+    font-size: 32px;
+    padding: 1rem 4rem;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.605);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    box-sizing: border-box;
+    padding: 1rem 4rem;
+    overflow: auto;
+    position: relative;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /*grid-template-rows: repeat(3, 1fr);*/
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem 1rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    display: grid;
+    grid-template: 3fr 1fr;
+    gap: 1rem;
+    border: 1px solid lightgrey;
+    position: relative;
+}
+
+.dot {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+}
+
+.info > h3 {
+    font-size: 1.3rem;
+}
+
+.info {
+    font-size: 1.2rem;
+}
+
+#new-book {
+    position: fixed;
+    right: 4rem;
+    bottom: 10%;
+    background-color: lightyellow;
+    border: 1px solid lightgrey;
+}
+
+#new-book:hover {
+    background-color: yellow;
+}
+
+#new-book:focus {
+    box-shadow: inset;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.delete:hover {
+    background-color: rgb(231, 89, 110);
+}
+
+#modal-backdrop {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    background-color: rgba(69, 69, 69, 0.694);
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#empty {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#empty img {
+    height: 12rem;
+    opacity: 0.6;
+}
+
+#form-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: black;
+}
+
+form {
+    width: max(20%, 15rem);
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+#close {
+    position: absolute;
+    left: 90%;
+    cursor: pointer;
+    color: grey;
+}
+
+#close:hover {
+    color: rgb(190, 190, 190);
+}
+
+#close:active {
+    color: #ffffff;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    color: white;
+}
+
+#checkbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+input[type="text"], input[type="number"] {
+    border-radius: 4px;
+    border: 1px solid;
+    height: 2rem;
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+label {
+    color: black;
+}
+
+input[type="checkbox"] {
+    height: 1rem;
+    transform: scale(1.5);
+}
+
+button, input[type="submit"] {
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    border: 0;
+    font-size: 1.2rem;
+}
+
+input[type="submit"] {
+    background-color: lightgreen;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.footer img {
+    height: 2rem;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.footer img:hover {
+    transform: rotate(360deg);
+}
+
+button i {
+    pointer-events: none;
+}

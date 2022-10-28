@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Howdy Library</title>
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/1c5ac24658.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="header"><i class="fa-solid fa-book"></i> Howdy Library</div>
+    <div class="content">
+        <div class="library"></div>
+        <button id="new-book">+ <span id="text">Add book</span></button>
+        
+    </div>
+    <div class="footer">
+        <span>Made by ychong032</span> <a href="https://github.com/ychong032" target="_blank"><img src="assets/github.png" alt="github"></a>
+    </div>
+    <div id="modal-backdrop"></div>
+    <div id="modal">
+        <form action="javascript:void(0);" onsubmit="addBookToLibrary()">
+            <div>
+                <i class="fa-solid fa-xmark" id="close"></i>
+            </div>
+            <div id="form-header">Add new book</div>
+            <div>
+                <input type="text" id="title" placeholder="Title" required>
+            </div>
+            <div>
+                <input type="text" id="author" placeholder="Author" required>
+            </div>
+            <div>
+                <input type="number" id="pages" step="1" placeholder="Number of pages" required>
+            </div>
+            <div id="checkbox-container">
+                <label for="status">I have read this</label>
+                <input type="checkbox" id="status" value="read">
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+    <div id="empty">
+        <img src="assets/desert.png" alt="desert">
+        <p>Looks pretty empty here...</p>
+    </div>
+</body>
+</html>
